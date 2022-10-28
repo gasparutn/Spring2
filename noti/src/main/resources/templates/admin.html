@@ -1,0 +1,82 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="utf-8" >
+        <link rel="shortcut icon" href="../../../../images/ima.ico"<title PRINCIPAL</title>
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <style>
+            body{font-family: Arial; background-color: black; box-sizing: border-box;}
+            form {
+                display: flex;
+                background-color: black;
+                font-size: 20px;
+                border-radius: 3px;
+                padding: 50px;
+                margin:100px;
+                width: 500px;
+            }
+            h5{
+                align-content: center;
+                font-size: 24px;
+                color: chartreuse
+
+            }
+            body{
+                height: 100vh;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-light">
+            <a class="navbar-brand" href="/index">PORTAL NOTICIAS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <div class="nav-nav mr-auto text-center">
+                    <ul style="align-items:  "class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link active" th:href="@{/admin/registrar}">Registar Noticia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" th:href="@{/admin/lista}">Ver Lista Noticia</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="row">
+            <div class="col-md-5 my-5" th:each="noticia : ${noticias}">
+                <div class="card-group">
+                    <div class="card">
+                        <img class="img-thumbnail rounded float-left" th:src="@{'/images/' + ${noticia.foto}}" th:alt="${noticia.foto}"/>
+                        <div class="card-body">
+                            <h5 class="card-title" th:text="${noticia.titulo}"></h5>
+                            <p class="card-text" th:text="${noticia.cuerpo}"</p>
+                            <p class="card-text" th:text="${noticia.alta}"</p>
+                        </div>
+
+                        <div align="right">
+                            <a class="btn btn-link btn-sm" th:href="@{/detalle/__${noticia.id}__}" >Ver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </head>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="./stylos/style.css">
+</body>
+</html>

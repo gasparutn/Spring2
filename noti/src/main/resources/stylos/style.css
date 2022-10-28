@@ -1,0 +1,29 @@
+
+body{font-family: Arial; background-color: black; box-sizing: border-box;}
+form {
+    display: flex;
+    background-color: black;
+    font-size: 20px;
+    border-radius: 3px;
+    padding: 50px;
+    margin:100px;
+    width: 500px;
+    justify-content: center
+    
+}
+h5{
+    align-content: center;
+    font-size: 24px;
+    color: chartreuse
+
+}
+body{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.container-fluid{
+    
+   align-content: center;
+}
